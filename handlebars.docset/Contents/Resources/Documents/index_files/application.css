@@ -172,8 +172,6 @@ a.issue-tracker {
   border-radius: 10px;
   max-width: 725px;
   width: 100%;
-  position: relative;
-  top: -20px;
   z-index: 2;
 
   -webkit-box-sizing: border-box;
@@ -184,6 +182,10 @@ a.issue-tracker {
 #contents h1 {
   color: #3f1e00;
   margin-bottom: 0;
+}
+
+#contents h1 + #intro {
+  margin-top: 20px;
 }
 
 /* line 137 */
@@ -216,7 +218,6 @@ a.issue-tracker {
 /* line 151 */
 #header {
   z-index: 1;
-  margin-bottom: 20px;
   height: 200px;
   overflow: hidden;
 }

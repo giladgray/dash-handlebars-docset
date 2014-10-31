@@ -6,7 +6,7 @@ NAME = 'handlebars.docset'
 
 # HTML Guides, saved from http://handlebarsjs.com
 FILES = {
-  'Introduction'     : 'index.html'
+  'Overview'         : 'index.html'
   'Block Helpers'    : 'block_helpers.html'
   'Built-In Helpers' : 'builtin_helpers.html'
   'Execution'        : 'execution.html'
@@ -31,10 +31,15 @@ populateEntry = (file, type) -> ->
 
 for title, file of FILES
   $ = cheerio.load fs.readFileSync("html/#{file}")
+  # discover docset entries
   docset.Guide[title] = "#{file}"
-  $('title').text(title)
   $('h2').each populateEntry(file, 'Section')
   $('h3').each populateEntry(file, 'Function')
+  # standardize page <title> and <h1> tags
+  $('title').text(title)
+  unless $('h1').length
+    $('#contents').prepend "<h1>#{title}</h1>"
+  # write modified HTML to docset contents
   fs.writeFileSync "handlebars.docset/Contents/Resources/Documents/#{file}", $.html()
 
 console.log 'Docset Configuration:'

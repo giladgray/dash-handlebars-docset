@@ -6,31 +6,39 @@ NAME = 'handlebars.docset'
 
 # HTML Guides, saved from http://handlebarsjs.com
 FILES = {
-  'Introduction'    : 'index.html'
-  'Block Helpers'   : 'block_helpers.html'
-  'Builtin Helpers' : 'builtin_helpers.html'
-  'Execution'       : 'execution.html'
-  'Expressions'     : 'expressions.html'
-  'Precompilation'  : 'precompilation.html'
-  'API Reference'   : 'reference.html'
+  'Introduction'     : 'index.html'
+  'Block Helpers'    : 'block_helpers.html'
+  'Built-In Helpers' : 'builtin_helpers.html'
+  'Execution'        : 'execution.html'
+  'Expressions'      : 'expressions.html'
+  'Precompilation'   : 'precompilation.html'
+  'API Reference'    : 'reference.html'
 }
 
 # type: {name: path, ...}
 docset =
   Guide: {}
   Section: {}
+  Function: {}
+
+# populate the given entry type with this element
+populateEntry = (file, type) -> ->
+  $el   = $(@)
+  title = $el.text().trim()
+  docset[type][title] = "#{file}##{$el.attr('id')}"
+  # insert table of contents anchor before this element
+  $el.before "<a name='//apple_ref/cpp/#{type}/#{encodeURIComponent(title)}' class='dashAnchor'></a>"
 
 for title, file of FILES
-  $ = cheerio.load fs.readFileSync("handlebars/#{file}")
-  # register each file as a Guide
+  $ = cheerio.load fs.readFileSync("html/#{file}")
   docset.Guide[title] = "#{file}"
-  # register each h2 as a Section
-  $('h2').each ->
-    $el   = $(@)
-    title = $el.text().trim()
-    docset.Section[title] = "#{file}##{$el.attr('id')}"
+  $('h2').each populateEntry(file, 'Section')
+  $('h3').each populateEntry(file, 'Function')
+  fs.writeFileSync "handlebars.docset/Contents/Resources/Documents/#{file}", $.html()
 
+console.log 'Docset Configuration:'
 console.log docset
+console.log '\n'
 
 # create the database!
 db = new Sequelize 'database', 'username', 'password',

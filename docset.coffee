@@ -32,6 +32,7 @@ populateEntry = (file, type) -> ->
 for title, file of FILES
   $ = cheerio.load fs.readFileSync("html/#{file}")
   docset.Guide[title] = "#{file}"
+  $('title').text(title)
   $('h2').each populateEntry(file, 'Section')
   $('h3').each populateEntry(file, 'Function')
   fs.writeFileSync "handlebars.docset/Contents/Resources/Documents/#{file}", $.html()

@@ -7,10 +7,13 @@ Handlebars is my favorite JS template engine because it's dead simple, wicked fa
 But there's no Dash Docset! Or, there wasn't. Because now there is.
 
 ## Installation
+> Work in progress.
 
+This docset will be available as a user-contributed Dash docset.
 
 ## Development
 Building this docset yourself is simple:
+
 1. `npm install -g coffee-script` (if you haven't already)
 2. `git clone` this repo
 3. `npm install`

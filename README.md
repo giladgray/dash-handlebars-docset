@@ -1,6 +1,6 @@
 # Dash Handlebars Docset
 
-> Handlebars docset for the excellent Dash documentation browser.
+> [Handlebars](http://handlebarsjs.com) docset for the excellent Dash documentation browser.
 
 Handlebars is my favorite JS template engine because it's dead simple, wicked fast, yet highly extensible. Also its precompilation feature are just bomb.
 
@@ -21,7 +21,7 @@ Building this docset yourself is simple:
 3. `npm install`
 4. `coffee docset.coffee` to rebuild the Sqlite database
 
-The Handlebars documentation HTML files can be found in `html/`. I saved each of the files from http://handlebarsjs.com and modified them slightly to look better in Dash by removing the DevSwag image, "Fork me on GitHub" banner, and Handlebars logo on all pages except the index.
+The Handlebars documentation HTML files can be found in `html/`. I saved each of the files from http://handlebarsjs.com and modified them slightly to look better in Dash by removing the DevSwag image and "Fork me on GitHub" banner.
 
 Other Dash Docset files can be found in the `handlebars.docset` folder, such as `icon.png`, `Contents/Info.plist`, and `Contents/Resources/docSet.dsidx`.
 

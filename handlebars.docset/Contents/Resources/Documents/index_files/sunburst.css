@@ -2,6 +2,7 @@ pre.sunburst {
   padding: 10px;
   font-size: 13px;
   font-family: Monaco, monospace;
+  white-space: pre-wrap;
 }
 
 pre.sunburst .DiffInserted {

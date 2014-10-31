@@ -11,6 +11,8 @@ But there's no Dash Docset! Or, there wasn't. Because now there is.
 
 This docset will be available as a user-contributed Dash docset.
 
+You can add it to Dash yourself by cloning and building via the instructions below, or by downloading a release archive from the Releases page.
+
 ## Development
 Building this docset yourself is simple:
 

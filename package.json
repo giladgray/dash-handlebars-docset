@@ -1,16 +1,30 @@
 {
   "name": "dash-handlebars-docset",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Handlebars docset for the excellent Dash documentation browser",
-  "main": "index.js",
+  "main": "docset.coffee",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "BSD-2-Clause",
+  "author": "Gilad Gray",
+  "license": "MIT",
   "dependencies": {
     "sequelize": "~2.0.0-rc2",
     "sqlite3": "~3.0.2",
     "cheerio": "~0.17.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/giladgray/dash-handlebars-docset"
+  },
+  "keywords": [
+    "dash",
+    "docset",
+    "handlebars",
+    "template"
+  ],
+  "bugs": {
+    "url": "https://github.com/giladgray/dash-handlebars-docset/issues"
   }
 }

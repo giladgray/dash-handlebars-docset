@@ -1,6 +1,6 @@
 {
   "name": "dash-handlebars-docset",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Handlebars docset for the excellent Dash documentation browser",
   "main": "docset.coffee",
   "scripts": {

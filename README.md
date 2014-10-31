@@ -19,8 +19,8 @@ Building this docset yourself is simple:
 3. `npm install`
 4. `coffee docset.coffee` to rebuild the Sqlite database
 
-The Handlebars documentation HTML files can be found in `handlebars.docset/Contents/Resources/Documents`. I saved each of the files from http://handlebarsjs.com and modified them slightly to look better in Dash by removing the DevSwag image, "Fork me on GitHub" banner, and Handlebars logo on all pages except the index.
+The Handlebars documentation HTML files can be found in `html/`. I saved each of the files from http://handlebarsjs.com and modified them slightly to look better in Dash by removing the DevSwag image, "Fork me on GitHub" banner, and Handlebars logo on all pages except the index.
 
-Other Dash Docset files can be found in the `handlebars.docset` folder, such as `icon.png` and `Contents/Info.plist`.
+Other Dash Docset files can be found in the `handlebars.docset` folder, such as `icon.png`, `Contents/Info.plist`, and `Contents/Resources/docSet.dsidx`.
 
-The `docset.coffee` script reads each of the HTML files to find Section headers and generates the `searchIndex` database table.
+The `docset.coffee` script reads each of the HTML files to find Section and Function headers and generates the `searchIndex` database table. It also injects table-of-contents anchors to the HTML files and writes them to `handlebars.docset/Contents/Resources/Documents`.

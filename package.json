@@ -1,0 +1,16 @@
+{
+  "name": "dash-handlebars-docset",
+  "version": "0.0.0",
+  "description": "Handlebars docset for the excellent Dash documentation browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "sequelize": "~2.0.0-rc2",
+    "sqlite3": "~3.0.2",
+    "cheerio": "~0.17.0"
+  }
+}

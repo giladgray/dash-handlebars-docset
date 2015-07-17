@@ -1,3 +1,5 @@
+#### Handlebars has been added to Dash's built-in set of docsets. Prefer to install directly from there.
+
 # Dash Handlebars Docset
 
 > [Handlebars](http://handlebarsjs.com) docset for the excellent Dash documentation browser.
